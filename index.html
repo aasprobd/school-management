@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global International School & College</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Modern CSS Reset & Variables */
+        :root {
+            --primary: #003366;
+            --secondary: #ffcc00;
+            --accent: #1a5f7a;
+            --light: #f4f4f4;
+            --dark: #333;
+            --white: #ffffff;
+            --gray: #6c757d;
+            --shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Modern Header */
+        header {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 0;
+        }
+
+        .logo {
+            height: 70px;
+            width: 70px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .brand_logo{
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        .logo-text h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .logo-text p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* Modern Navigation */
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 500;
+            padding: 25px 0;
+            display: block;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--secondary);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--secondary);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 100%;
+        }
+
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        /* Modern Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 43, 91, 0.85), rgba(26, 95, 122, 0.9)), 
+                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 140px 20px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        /* Modern Button */
+        .btn {
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 15px 35px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            display: inline-block;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
+        }
+
+        .btn:hover {
+            background: #ffd633;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 204, 0, 0.4);
+        }
+
+        /* Modern Features Section */
+        .features {
+            display: flex;
+            justify-content: space-around;
+            padding: 80px 5%;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .box {
+            background: var(--white);
+            padding: 40px 30px;
+            width: 28%;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            min-width: 300px;
+        }
+
+        .box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .box-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .box h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        /* Modern Page Container */
+        .page-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 5%;
+        }
+
+        .page {
+            background: var(--white);
+            margin: 30px 0;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--secondary);
+        }
+
+        .page-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .page-header p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Modern Form Styles */
+        .form {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .form input,
+        .form textarea,
+        .form select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form input:focus,
+        .form textarea:focus,
+        .form select:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);
+        }
+
+        /* Modern Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Modern Dashboard */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            border-top: 5px solid var(--primary);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        /* Modern Table */
+        .table-container {
+            overflow-x: auto;
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 0;
+        }
+
+        .table th,
+        .table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .table th {
+            background: var(--primary);
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .table tr:hover {
+            background-color: rgba(0, 51, 102, 0.05);
+        }
+
+        /* Error Message */
+        .error {
+            color: #dc3545;
+            margin-top: 5px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Modern Footer */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 60px 5% 30px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: var(--secondary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background: var(--secondary);
+            color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .box {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 20px;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 100px;
+                left: 0;
+                width: 100%;
+                background: var(--primary);
+                padding: 20px;
+                transform: translateY(-150%);
+                transition: transform 0.4s ease;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+            
+            nav.active {
+                transform: translateY(0);
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            nav ul li {
+                width: 100%;
+            }
+            
+            nav ul li a {
+                padding: 15px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .hero {
+                padding: 100px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .features {
+                flex-direction: column;
+                padding: 50px 20px;
+            }
+            
+            .box {
+                width: 100%;
+                margin-bottom: 0;
+            }
+            
+            .page {
+                padding: 30px 20px;
+                margin: 20px 0;
+            }
+            
+            .page-header h2 {
+                font-size: 2rem;
+            }
+            
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.4rem;
+            }
+            
+            .logo {
+                height: 50px;
+                width: 50px;
+                font-size: 18px;
+            }
+            
+            .page {
+                padding: 25px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Modern Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <div class="logo">
+                    <img class="brand_logo" src="/assets/logo.jpg" alt="Global " srcset="">
+                </div>
+                <div class="logo-text">
+                    <h1>Global International</h1>
+                    <p>School & College</p>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+                    <li><a href="#" class="nav-link" data-page="about">About Us</a></li>
+                    <li><a href="#" class="nav-link" data-page="academic">Academic</a></li>
+                    <li><a href="#" class="nav-link" data-page="admission">Admission</a></li>
+                    <li><a href="#" class="nav-link" data-page="campus">Campus</a></li>
+                    <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Home Page -->
+        <div id="home-page" class="page-content">
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>Shaping Future Leaders Since 1995</h1>
+                    <p>Global International School & College provides world-class education that empowers students to achieve excellence in academics, character, and global citizenship.</p>
+                    <a href="#" class="btn nav-link" data-page="admission">Apply Now</a>
+                </div>
+            </section>
+
+            <section class="features">
+                <div class="box">
+                    <div class="box-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Academic Excellence</h3>
+                    <p>Our students consistently achieve top results in national and international examinations with a 98% pass rate.</p>
+                </div>
+                
+                <div class="box">
+                    <div class="box-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Experienced Faculty</h3>
+                    <p>Our dedicated teachers are experts in their fields with an average of 15+ years teaching experience.</p>
+                </div>
+                
+                <div class="box">
+                    <div class="box-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Modern Facilities</h3>
+                    <p>State-of-the-art laboratories, libraries, and sports facilities enhance the learning experience.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- About Us Page (Hidden) -->
+        <div id="about-page" class="page-content" style="display: none;">
+            <div class="page-container">
+                <div class="page">
+                    <div class="page-header">
+                        <h2>About Global International</h2>
+                        <p>Learn about our history, mission, and vision for education</p>
+                    </div>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 40px; margin-bottom: 40px; align-items: center;">
+                        <div style="flex: 1; min-width: 300px;">
+                            <h3 style="color: var(--primary); margin-bottom: 20px; font-size: 1.8rem;">Our History</h3>
+                            <p>Established in 1995, Global International School & College began with a vision to provide quality education that bridges local values with global perspectives. What started as a small school with 200 students has now grown into a premier educational institution with over 3,000 students across both school and college divisions.</p>
+                            <p>Over the years, we have consistently expanded our facilities, curriculum, and extracurricular offerings to meet the evolving needs of our students and the global community.</p>
+                        </div>
+                        <div style="flex: 1; min-width: 300px;">
+                            <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="School Building" style="width: 100%; border-radius: 10px; box-shadow: var(--shadow);">
+                        </div>
+                    </div>
+                    
+                    <div style="background: linear-gradient(135deg, #f0f8ff 0%, #e6f7ff 100%); padding: 40px; border-radius: 15px; margin: 40px 0;">
+                        <h3 style="color: var(--primary); margin-bottom: 25px; font-size: 1.8rem; text-align: center;">Mission & Vision</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                            <div style="text-align: center; padding: 25px; background: white; border-radius: 10px; box-shadow: var(--shadow);">
+                                <i class="fas fa-bullseye" style="font-size: 3rem; color: var(--secondary); margin-bottom: 20px;"></i>
+                                <h4 style="color: var(--primary); margin-bottom: 15px;">Our Mission</h4>
+                                <p>To provide a holistic education that nurtures intellectual curiosity, moral integrity, and social responsibility, preparing students to become leaders and lifelong learners.</p>
+                            </div>
+                            <div style="text-align: center; padding: 25px; background: white; border-radius: 10px; box-shadow: var(--shadow);">
+                                <i class="fas fa-eye" style="font-size: 3rem; color: var(--secondary); margin-bottom: 20px;"></i>
+                                <h4 style="color: var(--primary); margin-bottom: 15px;">Our Vision</h4>
+                                <p>To be recognized as a center of educational excellence that develops globally-minded citizens who contribute positively to society.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Academic Page (Hidden) -->
+        <div id="academic-page" class="page-content" style="display: none;">
+            <div class="page-container">
+                <div class="page">
+                    <div class="page-header">
+                        <h2>Academic Programs</h2>
+                        <p>Explore our comprehensive curriculum designed for holistic development</p>
+                    </div>
+                    
+                    <div class="dashboard-grid">
+                        <div class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-child"></i>
+                            </div>
+                            <h3>Primary School</h3>
+                            <p>Grade 1-5 focusing on foundational skills and creativity</p>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <h3>Secondary School</h3>
+                            <p>Grade 6-10 preparing for O-Level examinations</p>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <h3>Higher Secondary</h3>
+                            <p>Grade 11-12 with Science, Business & Humanities streams</p>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3>College Programs</h3>
+                            <p>BBA, BSc in CS, BA in English and more</p>
+                        </div>
+                    </div>
+                    
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Program</th>
+                                    <th>Duration</th>
+                                    <th>Key Subjects</th>
+                                    <th>Exam Board</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Primary (Grade 1-5)</td>
+                                    <td>5 Years</td>
+                                    <td>English, Math, Science, Social Studies</td>
+                                    <td>National Curriculum</td>
+                                </tr>
+                                <tr>
+                                    <td>Secondary (Grade 6-10)</td>
+                                    <td>5 Years</td>
+                                    <td>English, Math, Physics, Chemistry, Biology</td>
+                                    <td>Cambridge O-Level</td>
+                                </tr>
+                                <tr>
+                                    <td>Higher Secondary (Grade 11-12)</td>
+                                    <td>2 Years</td>
+                                    <td>Science/Business/Humanities Streams</td>
+                                    <td>Cambridge A-Level</td>
+                                </tr>
+                                <tr>
+                                    <td>BBA Program</td>
+                                    <td>4 Years</td>
+                                    <td>Management, Marketing, Finance, Entrepreneurship</td>
+                                    <td>University of London</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admission Page (Hidden) -->
+        <div id="admission-page" class="page-content" style="display: none;">
+            <div class="page-container">
+                <div class="page">
+                    <div class="page-header">
+                        <h2>Admission Process</h2>
+                        <p>Join our community of learners and leaders</p>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 40px;">
+                        <div>
+                            <h3 style="color: var(--primary); margin-bottom: 20px; font-size: 1.8rem;">Admission Requirements</h3>
+                            <p>Admission to Global International School & College is competitive and based on academic achievement, entrance examination results, and personal interviews.</p>
+                            
+                            <div style="margin-top: 30px;">
+                                <h4 style="color: var(--primary); margin-bottom: 15px; font-size: 1.3rem;">School Admission (Grade 1-12)</h4>
+                                <ul style="margin-left: 20px; margin-bottom: 25px;">
+                                    <li>Completed application form</li>
+                                    <li>Previous school transcripts</li>
+                                    <li>Entrance examination in English and Mathematics</li>
+                                    <li>Interview with the admissions committee</li>
+                                    <li>Birth certificate copy</li>
+                                </ul>
+                                
+                                <h4 style="color: var(--primary); margin-bottom: 15px; font-size: 1.3rem;">College Admission</h4>
+                                <ul style="margin-left: 20px;">
+                                    <li>Completed college application form</li>
+                                    <li>High school transcripts and certificates</li>
+                                    <li>Entrance examination in relevant subjects</li>
+                                    <li>Personal statement</li>
+                                    <li>Two letters of recommendation</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div style="background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); color: white; padding: 40px; border-radius: 15px; box-shadow: var(--shadow);">
+                                <h3 style="margin-bottom: 25px; font-size: 1.8rem;">Apply Now</h3>
+                                <p>Begin your application process by filling out our online form. Our admissions team will contact you within 3 business days.</p>
+                                
+                                <form id="admissionForm" class="form" style="margin-top: 30px;">
+                                    <div class="form-group">
+                                        <label for="applicantName">Full Name</label>
+                                        <input type="text" id="applicantName" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="applicantEmail">Email Address</label>
+                                        <input type="email" id="applicantEmail" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="applicantPhone">Phone Number</label>
+                                        <input type="tel" id="applicantPhone" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="programInterest">Program of Interest</label>
+                                        <select id="programInterest" required>
+                                            <option value="">Select Program</option>
+                                            <option value="primary">Primary School (Grade 1-5)</option>
+                                            <option value="secondary">Secondary School (Grade 6-10)</option>
+                                            <option value="higher-secondary">Higher Secondary (Grade 11-12)</option>
+                                            <option value="bba">BBA Program</option>
+                                            <option value="cs">BSc in Computer Science</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Submit Application</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Campus Page (Hidden) -->
+        <div id="campus-page" class="page-content" style="display: none;">
+            <div class="page-container">
+                <div class="page">
+                    <div class="page-header">
+                        <h2>Campus & Facilities</h2>
+                        <p>Explore our state-of-the-art campus designed for optimal learning</p>
+                    </div>
+                    
+                    <div class="gallery-grid">
+                        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Library">
+                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Science Lab">
+                        <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Computer Lab">
+                        <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Sports Field">
+                        <img src="https://images.unsplash.com/photo-1519070994522-88c6b756330e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Auditorium">
+                        <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Classroom">
+                    </div>
+                    
+                    <div style="margin-top: 40px;">
+                        <h3 style="color: var(--primary); margin-bottom: 25px; font-size: 1.8rem;">Campus Facilities</h3>
+                        <div class="dashboard-grid">
+                            <div class="card">
+                                <div class="card-icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <h3>Central Library</h3>
+                                <p>50,000+ books, digital resources, quiet study spaces</p>
+                            </div>
+                            
+                            <div class="card">
+                                <div class="card-icon">
+                                    <i class="fas fa-flask"></i>
+                                </div>
+                                <h3>Science Labs</h3>
+                                <p>Fully equipped Physics, Chemistry, Biology laboratories</p>
+                            </div>
+                            
+                            <div class="card">
+                                <div class="card-icon">
+                                    <i class="fas fa-laptop"></i>
+                                </div>
+                                <h3>Computer Labs</h3>
+                                <p>High-speed internet, latest software and hardware</p>
+                            </div>
+                            
+                            <div class="card">
+                                <div class="card-icon">
+                                    <i class="fas fa-futbol"></i>
+                                </div>
+                                <h3>Sports Complex</h3>
+                                <p>Football, basketball, swimming pool, gymnasium</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Page (Hidden) -->
+        <div id="contact-page" class="page-content" style="display: none;">
+            <div class="page-container">
+                <div class="page">
+                    <div class="page-header">
+                        <h2>Contact Us</h2>
+                        <p>Get in touch with Global International School & College</p>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 40px;">
+                        <div>
+                            <h3 style="color: var(--primary); margin-bottom: 25px; font-size: 1.8rem;">Contact Information</h3>
+                            
+                            <div style="display: flex; align-items: flex-start; gap: 15px; margin-bottom: 25px;">
+                                <i class="fas fa-map-marker-alt" style="color: var(--secondary); font-size: 1.5rem; margin-top: 5px;"></i>
+                                <div>
+                                    <h4 style="color: var(--primary); margin-bottom: 5px;">Address</h4>
+                                    <p>123 Education Road, Academic District<br>Cityville, State 12345</p>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; align-items: flex-start; gap: 15px; margin-bottom: 25px;">
+                                <i class="fas fa-phone" style="color: var(--secondary); font-size: 1.5rem; margin-top: 5px;"></i>
+                                <div>
+                                    <h4 style="color: var(--primary); margin-bottom: 5px;">Phone Numbers</h4>
+                                    <p>Admissions: +1 (555) 123-4567<br>Administration: +1 (555) 987-6543</p>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; align-items: flex-start; gap: 15px; margin-bottom: 25px;">
+                                <i class="fas fa-envelope" style="color: var(--secondary); font-size: 1.5rem; margin-top: 5px;"></i>
+                                <div>
+                                    <h4 style="color: var(--primary); margin-bottom: 5px;">Email Addresses</h4>
+                                    <p>Admissions: admissions@globalinternational.edu<br>General: info@globalinternational.edu</p>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; align-items: flex-start; gap: 15px;">
+                                <i class="fas fa-clock" style="color: var(--secondary); font-size: 1.5rem; margin-top: 5px;"></i>
+                                <div>
+                                    <h4 style="color: var(--primary); margin-bottom: 5px;">Office Hours</h4>
+                                    <p>Monday - Friday: 8:00 AM - 5:00 PM<br>Saturday: 9:00 AM - 1:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 style="color: var(--primary); margin-bottom: 25px; font-size: 1.8rem;">Send Us a Message</h3>
+                            
+                            <form id="contactForm" class="form">
+                                <div class="form-group">
+                                    <label for="contactName">Full Name</label>
+                                    <input type="text" id="contactName" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contactEmail">Email Address</label>
+                                    <input type="email" id="contactEmail" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contactSubject">Subject</label>
+                                    <input type="text" id="contactSubject" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contactMessage">Message</label>
+                                    <textarea id="contactMessage" rows="5" required></textarea>
+                                </div>
+                                
+                                <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modern Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Global International</h3>
+                <p>Providing world-class education since 1995. Our mission is to develop globally-minded citizens who contribute positively to society.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#" class="nav-link" data-page="home">Home</a></li>
+                    <li><a href="#" class="nav-link" data-page="about">About Us</a></li>
+                    <li><a href="#" class="nav-link" data-page="academic">Academic Programs</a></li>
+                    <li><a href="#" class="nav-link" data-page="admission">Admission Process</a></li>
+                    <li><a href="#" class="nav-link" data-page="campus">Campus Facilities</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> 123 Education Road, Cityville</li>
+                    <li><i class="fas fa-phone" style="margin-right: 10px;"></i> +1 (555) 123-4567</li>
+                    <li><i class="fas fa-envelope" style="margin-right: 10px;"></i> info@globalinternational.edu</li>
+                    <li><i class="fas fa-clock" style="margin-right: 10px;"></i> Mon-Fri: 8:00 AM - 5:00 PM</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 Global International School & College. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Page Navigation System
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Get the target page
+                const targetPage = this.getAttribute('data-page');
+                
+                // Hide all pages
+                document.querySelectorAll('.page-content').forEach(page => {
+                    page.style.display = 'none';
+                });
+                
+                // Show target page
+                document.getElementById(`${targetPage}-page`).style.display = 'block';
+                
+                // Update active link
+                document.querySelectorAll('.nav-link').forEach(navLink => {
+                    navLink.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                // Close mobile menu if open
+                if (mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+                
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+        
+        // Form Submission Handling
+        document.getElementById('admissionForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic validation
+            const name = document.getElementById('applicantName').value;
+            const email = document.getElementById('applicantEmail').value;
+            const phone = document.getElementById('applicantPhone').value;
+            const program = document.getElementById('programInterest').value;
+            
+            if (!name || !email || !phone || !program) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Simulate form submission
+            alert(`Thank you, ${name}! Your application for ${program} has been submitted. We will contact you at ${email} within 3 business days.`);
+            this.reset();
+        });
+        
+        document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic validation
+            const name = document.getElementById('contactName').value;
+            const email = document.getElementById('contactEmail').value;
+            const subject = document.getElementById('contactSubject').value;
+            const message = document.getElementById('contactMessage').value;
+            
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Simulate form submission
+            alert(`Thank you, ${name}! Your message has been sent. We will respond to you at ${email} as soon as possible.`);
+            this.reset();
+        });
+        
+        // Initialize the page
+        window.addEventListener('DOMContentLoaded', function() {
+            // Set home page as active by default
+            document.getElementById('home-page').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
