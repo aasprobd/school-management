@@ -3,11 +3,11 @@
 This roadmap covers backend, frontend, database, security, and deployment for the "Global International School & College" Python-based enterprise software.
 
 ## Phase 1: Foundation & Backend (Python/FastAPI)
-- [ ] 1. Initialize Git repository and project structure.
-- [ ] 2. Set up Python virtual environment (venv/poetry).
-- [ ] 3. Install FastAPI, Uvicorn, and SQLAlchemy.
-- [ ] 4. Configure environment variables (database URLs, secret keys).
-- [ ] 5. Create basic FastAPI application skeleton.
+- [x] 1. Initialize Git repository and project structure.
+- [x] 2. Set up Python virtual environment (venv/poetry).
+- [x] 3. Install FastAPI, Uvicorn, and SQLAlchemy.
+- [x] 4. Configure environment variables (database URLs, secret keys).
+- [x] 5. Create basic FastAPI application skeleton.
 - [ ] 6. Define PostgreSQL database schema for Users (Admin, Teacher, Student).
 - [ ] 7. Implement User registration with hashed passwords (bcrypt).
 - [ ] 8. Set up JWT-based authentication logic.
@@ -20,9 +20,9 @@ This roadmap covers backend, frontend, database, security, and deployment for th
 - [ ] 15. Create API for assigning teachers to subjects.
 - [ ] 16. Create API for assigning students to classes.
 - [ ] 17. Implement global "Notice Board" CRUD API.
-- [ ] 18. Set up automated API documentation (Swagger UI).
+- [x] 18. Set up automated API documentation (Swagger UI).
 - [ ] 19. Initial backend unit testing (Pytest).
-- [ ] 20. Database migration setup (Alembic).
+- [x] 20. Database migration setup (Alembic).
 
 ## Phase 2: Core Academic Features
 - [ ] 21. Implement Attendance system (API for daily tracking).
@@ -100,7 +100,7 @@ This roadmap covers backend, frontend, database, security, and deployment for th
 - [ ] 87. Data Encryption at rest (PostgreSQL Transparent Encryption).
 - [ ] 88. CSRF Protection for forms.
 - [ ] 89. Regular automated database backups (S3).
-- [ ] 90. Dockerize the entire application (Docker Compose).
+- [x] 90. Dockerize the entire application (Docker Compose).
 - [ ] 91. Set up CI/CD pipeline (GitHub Actions).
 - [ ] 92. Deploy to staging environment (DigitalOcean/AWS).
 - [ ] 93. Implement Error tracking (Sentry).
@@ -108,6 +108,6 @@ This roadmap covers backend, frontend, database, security, and deployment for th
 - [ ] 95. Load testing (JMeter/Locust).
 - [ ] 96. Penetration testing / Security audit.
 - [ ] 97. Final bug bash and QA across browsers.
-- [ ] 98. Create User Manual/Documentation within the app.
+- [x] 98. Create User Manual/Documentation within the app.
 - [ ] 99. Production launch / DNS configuration.
 - [ ] 100. Post-launch maintenance and feedback loop.
